@@ -5,10 +5,7 @@
         ElectronApi调用测试, 调用默认浏览器跳转访问地址：
         <el-button type="primary" @click="jumpToUrl">官网文档</el-button>
       </div>
-      <WangEditor class="mb20"  @content="getContent" defaultContent="请输入..." ref="editorRef"></WangEditor>
-      <el-button type="primary" @click="syncHTML">获取结果Html</el-button>
-      <el-button type="" @click="syncText">获取结果Text</el-button>
-      <el-divider/>
+      <WangEditor @content="getContent" defaultContent="请输入..."></WangEditor>
       <div v-html='resultHtml'></div>
       <div v-html='resultText'></div>
     </div>
@@ -19,7 +16,6 @@
 import WangEditor from '@/components/editors/WangEditor.vue'
 import {ref} from "vue";
 
-const editorRef = ref(null)
 const resultHtml = ref('')
 const resultText = ref('')
 
@@ -33,17 +29,8 @@ const getContent = (content) => {
   resultText.value = content.text;
 }
 
-const syncHTML = () => {
-  editorRef.value.syncHTML();
-}
-const syncText = () => {
-  editorRef.value.syncText();
-}
-
 </script>
 
 <style scoped>
-.mb20 {
-  margin-bottom: 20px;
-}
+
 </style>

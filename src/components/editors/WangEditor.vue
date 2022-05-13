@@ -1,12 +1,15 @@
 <template>
   <div>
-    <div ref='editor'></div>
+    <div class="mb20"  ref='editor'></div>
+    <el-button type="primary" @click="syncHTML">获取结果Html</el-button>
+    <el-button type="" @click="syncText">获取结果Text</el-button>
+    <el-divider/>
   </div>
 </template>
 
 <script setup>
 import WangEditor from "wangeditor";
-import {defineExpose, defineEmits, ref, reactive, onMounted, onBeforeUnmount} from "vue";
+import {ref, reactive, onMounted, onBeforeUnmount} from "vue";
 
 const props = defineProps({
   defaultContent: {
@@ -49,9 +52,10 @@ const syncText = () => {
   emit('content', content);
 }
 
-defineExpose({syncHTML,syncText});
-
 </script>
 
 <style scoped>
+.mb20 {
+  margin-bottom: 20px;
+}
 </style>
