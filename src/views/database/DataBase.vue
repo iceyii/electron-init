@@ -1,29 +1,31 @@
 <template>
   <div>
-    <el-button type='primary' @click='add'>Add</el-button>
-    <el-button type='primary' @click='del'>Del</el-button>
-    <el-button type='primary' @click='update'>Update</el-button>
-    <el-button type='primary' @click='getAll'>GetAll</el-button>
-    <el-button type='primary' @click='GetByKey'>GetByKey</el-button>
-    <el-button type='primary' @click='GetByWhere'>GetByWhere</el-button>
-    <el-divider />
-    <el-table :data='tableData' style='width: 100%'>
-      <el-table-column prop='key' label='key' />
-      <el-table-column prop='value' label='value' />
-    </el-table>
+    <div class="container">
+      <el-button type='primary' @click='add'>Add</el-button>
+      <el-button type='primary' @click='del'>Del</el-button>
+      <el-button type='primary' @click='update'>Update</el-button>
+      <el-button type='primary' @click='getAll'>GetAll</el-button>
+      <el-button type='primary' @click='GetByKey'>GetByKey</el-button>
+      <el-button type='primary' @click='GetByWhere'>GetByWhere</el-button>
+      <el-divider/>
+      <el-table :data='tableData' style='width: 100%'>
+        <el-table-column prop='key' label='key'/>
+        <el-table-column prop='value' label='value'/>
+      </el-table>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { db } from '@/plugins/database'
-import { onMounted, ref } from 'vue'
-import { ElMessage } from 'element-plus'
+import {db} from '@/plugins/database'
+import {onMounted, ref} from 'vue'
+import {ElMessage} from 'element-plus'
 
 const tableData = ref([])
 
 const add = async () => {
   for (let i = 1; i <= 5; i++) {
-    await db.collection('dict').insert({ key: 'key' + i, value: i }).catch(e => {
+    await db.collection('dict').insert({key: 'key' + i, value: i}).catch(e => {
       console.log(e)
       ElMessage.error(e.message)
     })
@@ -33,7 +35,7 @@ const add = async () => {
 
 const del = async () => {
   for (let i = 1; i <= 5; i++) {
-    await db.collection('dict').remove({ key: 'key' + i }).catch(e => {
+    await db.collection('dict').remove({key: 'key' + i}).catch(e => {
       console.log(e)
       ElMessage.error(e.message)
     })
@@ -43,7 +45,7 @@ const del = async () => {
 
 const update = async () => {
   for (let i = 1; i <= 5; i++) {
-    await db.collection('dict').update({ key: 'key' + i }, { value: 100 + i }).catch(e => {
+    await db.collection('dict').update({key: 'key' + i}, {value: 100 + i}).catch(e => {
       console.log(e)
       ElMessage.error(e.message)
     })
@@ -56,11 +58,11 @@ const getAll = async () => {
 }
 
 const GetByKey = async () => {
-  tableData.value = await db.collection('dict').find({ key: 'key2' }).toArray()
+  tableData.value = await db.collection('dict').find({key: 'key2'}).toArray()
 }
 
 const GetByWhere = async () => {
-  tableData.value = await db.collection('dict').find({ value: { $gte: 3 } }).toArray()
+  tableData.value = await db.collection('dict').find({value: {$gte: 3}}).toArray()
 }
 
 onMounted(() => {
