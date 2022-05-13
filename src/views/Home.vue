@@ -20,9 +20,9 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
-import vHeader from "../components/Header.vue";
-import vSidebar from "../components/Sidebar.vue";
-import vTags from "../components/Tags.vue";
+import vHeader from "../components/base/Header.vue";
+import vSidebar from "../components/base/Sidebar.vue";
+import vTags from "../components/base/Tags.vue";
 export default {
     components: {
         vHeader,
