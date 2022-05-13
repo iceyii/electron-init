@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="plugins-tips">
-        ElectronApi调用测试, 跳转访问地址：
+        ElectronApi调用测试, 调用默认浏览器跳转访问地址：
         <el-button type="primary" @click="jumpToUrl">官网文档</el-button>
       </div>
       <div class="mgb20" ref='editor'></div>

@@ -27,11 +27,8 @@
         <el-table-column prop='date' label='注册时间'></el-table-column>
         <el-table-column label='操作' width='180' align='center'>
           <template #default='scope'>
-            <el-button type='' @click='handleEdit(scope.$index, scope.row)'>编辑
-            </el-button>
-            <el-button type='default' class='red'
-                       @click='handleDelete(scope.row.id)'>删除
-            </el-button>
+            <el-link type='primary' text='编辑' @click='handleEdit(scope.$index, scope.row)'>编辑</el-link>
+            <el-link type='danger' text='删除' @click='handleDelete(scope.row.id)'>删除</el-link>
           </template>
         </el-table-column>
       </el-table>
@@ -129,6 +126,7 @@ const handleDelete = (id) => {
       getData()
       ElMessage.success('删除成功！')
     })
+  }).catch(() => {
   })
 }
 
@@ -167,11 +165,14 @@ const saveEdit = () => {
   font-size: 14px;
 }
 
-.red {
-  color: #ff0000;
-}
-
 .mr10 {
   margin-right: 10px;
+}
+
+.el-link {
+  margin-right: 8px;
+}
+.el-link .el-icon--right.el-icon {
+  vertical-align: text-bottom;
 }
 </style>
