@@ -5,7 +5,7 @@
         ElectronApi调用测试, 调用默认浏览器跳转访问地址：
         <el-button type="primary" @click="jumpToUrl">官网文档</el-button>
       </div>
-      <WangEditor @content="getContent" defaultContent="请输入..." ref="editorRef"></WangEditor>
+      <WangEditor class="mb20"  @content="getContent" defaultContent="请输入..." ref="editorRef"></WangEditor>
       <el-button type="primary" @click="syncHTML">获取结果Html</el-button>
       <el-button type="" @click="syncText">获取结果Text</el-button>
       <el-divider/>
@@ -42,5 +42,8 @@ const syncText = () => {
 
 </script>
 
-<style>
+<style scoped>
+.mb20 {
+  margin-bottom: 20px;
+}
 </style>

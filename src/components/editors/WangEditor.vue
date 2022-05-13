@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb20" ref='editor'></div>
+    <div ref='editor'></div>
   </div>
 </template>
 
@@ -54,7 +54,4 @@ defineExpose({syncHTML,syncText});
 </script>
 
 <style scoped>
-.mb20 {
-  margin-bottom: 20px;
-}
 </style>
