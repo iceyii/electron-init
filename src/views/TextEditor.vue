@@ -2,9 +2,8 @@
   <div>
     <div class="container">
       <div class="plugins-tips">
-        wangEditor：轻量级 web 富文本编辑器，配置方便，使用简单。
-        访问地址：
-        <a href="https://www.wangeditor.com/doc/" target="_blank">wangEditor</a>
+        ElectronApi调用测试, 跳转访问地址：
+        <el-button type="primary" @click="jumpToUrl">官网文档</el-button>
       </div>
       <div class="mgb20" ref='editor'></div>
       <el-button type="primary" @click="syncHTML">提交</el-button>
@@ -40,8 +39,13 @@ export default {
       content.html = instance.txt.html();
       result.value = content.html;
     };
+    const jumpToUrl = () => {
+      // 使用window.electron调用, preload.js中定义的electronApi
+      window.electron.openURL("https://www.wangeditor.com/");
+    };
     return {
       syncHTML,
+      jumpToUrl,
       result,
       editor,
       content,
