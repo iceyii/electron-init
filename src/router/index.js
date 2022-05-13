@@ -26,7 +26,7 @@ const routes = [
           title: '数据库',
           icon: 'el-icon-coin'
         },
-        component: () => import ( /* webpackChunkName: "dashboard" */ '../views/database/DataBase.vue')
+        component: () => import ( /* webpackChunkName: "dashboard" */ '../views/DataBase.vue')
       },
       {
         path: '/baseForm',
@@ -54,6 +54,15 @@ const routes = [
           icon: 'el-icon-edit'
         },
         component: () => import ( /* webpackChunkName: "dashboard" */ '../views/TextEditor.vue')
+      },
+      {
+        path: '/jsonEditor',
+        name: 'jsonEditor',
+        meta: {
+          title: 'Json编辑器',
+          icon: 'el-icon-edit'
+        },
+        component: () => import ( /* webpackChunkName: "dashboard" */ '../views/JsonEditor.vue')
       },
     ]
   }

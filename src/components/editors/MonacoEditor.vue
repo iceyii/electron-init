@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div id="editor" ref="editor"></div>
+    <div class="border" id="editor" ref="editor"></div>
   </div>
 </template>
 
-<script >
+<script>
 import * as monaco from "monaco-editor";
 import EditorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
 import JsonWorker from "monaco-editor/esm/vs/language/json/json.worker?worker";
@@ -22,9 +22,6 @@ export default {
   data: () => ({
   }),
   methods: {
-    send() {
-      this.$emit('result', this.content);
-    },
   },
   mounted() {
     self.MonacoEnvironment = {
@@ -45,17 +42,47 @@ export default {
       },
     };
     const editor = monaco.editor.create(this.$refs.editor, {
-      value: this.content,
       language: "json",
       lineNumbers: "on",
+      minimap: {
+        enabled: false
+      },
+      overviewRulerBorder: false,
+      renderLineHighlight: 'none',
+      scrollBeyondLastLine: false,
+      automaticLayout: true,
+      fontSize: "14px",
+      lineNumbersMinChars: 3,
+      overviewRulerLanes: 0,
+      hideCursorInOverviewRuler: true,
+      find: {
+        addExtraSpaceOnTop: false,
+      },
+      formatOnType: true,
+      formatOnPaste: true,
+      scrollbar: {
+        horizontal: "hidden",
+        vertical: "hidden",
+      }
+    });
+    editor.setValue(this.content);
+    editor.onDidChangeModelContent(() => {
+      //编辑器内容change事件
+      this.$emit("changeContent", editor.getValue());
     });
   },
 };
 </script>
 
 <style scoped>
+
+.border {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
 #editor {
-  min-height: 600px;
-  min-width: 800px;
+  min-height: 300px;
 }
 </style>
