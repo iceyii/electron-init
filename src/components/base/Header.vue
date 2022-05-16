@@ -5,7 +5,7 @@
       <i v-if='!collapse' class='el-icon-s-fold'></i>
       <i v-else class='el-icon-s-unfold'></i>
     </div>
-    <div class='logo'>{{currentLabel}}</div>
+    <div class='logo'>{{ currentLabel }}</div>
 
     <div class='header-right'>
       <div class='header-user-con'>
@@ -13,40 +13,30 @@
     </div>
   </div>
 </template>
-<script>
-import { computed, onMounted, ref } from 'vue'
-import { useStore } from 'vuex'
-import { onBeforeRouteUpdate } from "vue-router";
+<script setup>
+import {computed, onMounted, ref} from 'vue'
+import {useStore} from 'vuex'
+import {onBeforeRouteUpdate} from "vue-router";
 
-export default {
-  setup() {
-    const store = useStore()
-    const currentLabel = ref('首页')
-    const username = localStorage.getItem('ms_username')
-    const collapse = computed(() => store.state.collapse)
-    // 侧边栏折叠
-    const collapseChange = () => {
-      store.commit('handleCollapse', !collapse.value)
-    }
-
-    onMounted(() => {
-      if (document.body.clientWidth < 1500) {
-        collapseChange()
-      }
-    })
-
-    onBeforeRouteUpdate((to) => {
-      currentLabel.value = to.meta.title;
-    });
-
-    return {
-      username,
-      currentLabel,
-      collapse,
-      collapseChange,
-    }
-  }
+const store = useStore()
+const currentLabel = ref('首页')
+// const username = localStorage.getItem('ms_username')
+const collapse = computed(() => store.state.collapse)
+// 侧边栏折叠
+const collapseChange = () => {
+  store.commit('handleCollapse', !collapse.value)
 }
+
+onMounted(() => {
+  if (document.body.clientWidth < 1500) {
+    collapseChange()
+  }
+})
+
+onBeforeRouteUpdate((to) => {
+  currentLabel.value = to.meta.title;
+});
+
 </script>
 <style scoped>
 .header {

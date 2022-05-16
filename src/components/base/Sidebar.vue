@@ -36,37 +36,29 @@
   </div>
 </template>
 
-<script>
-import { computed, watch } from 'vue'
-import { useStore } from 'vuex'
-import { useRoute } from 'vue-router'
-import { useRouter } from 'vue-router'
+<script setup>
+import {computed, ref} from 'vue'
+import {useStore} from 'vuex'
+import {useRoute} from 'vue-router'
+import {useRouter} from 'vue-router'
 
-export default {
-  setup() {
-    const route = useRoute()
-    const router = useRouter()
-    const menuList = []
-    router.getRoutes().filter(r => r.path !== '/').forEach(i => {
-      menuList.push({
-        title: String(i.meta.title),
-        index: i.path,
-        icon: String(i.meta.icon)
-      })
-    })
-    const onRoutes = computed(() => {
-      return route.path
-    })
-    const store = useStore()
-    const collapse = computed(() => store.state.collapse)
+const route = useRoute()
+const router = useRouter()
+const menuList = ref([])
+const store = useStore()
+const collapse = computed(() => store.state.collapse)
+const onRoutes = computed(() => {
+  return route.path
+})
 
-    return {
-      onRoutes,
-      collapse,
-      menuList
-    }
-  }
-}
+router.getRoutes().filter(r => r.path !== '/').forEach(i => {
+  menuList.value.push({
+    title: String(i.meta.title),
+    index: i.path,
+    icon: String(i.meta.icon)
+  })
+})
+
 </script>
 
 <style scoped>
