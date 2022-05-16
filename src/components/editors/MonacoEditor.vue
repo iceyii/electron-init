@@ -68,7 +68,7 @@ export default {
     editor.setValue(this.content);
     editor.onDidChangeModelContent(() => {
       //编辑器内容change事件
-      this.$emit("changeContent", editor.getValue());
+      this.$emit("change-content", editor.getValue());
     });
   },
 };
