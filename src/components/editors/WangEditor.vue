@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb20"  ref='editor'></div>
+    <div class="mb20" ref='editor'></div>
     <el-button type="primary" @click="syncHTML">获取结果Html</el-button>
     <el-button type="" @click="syncText">获取结果Text</el-button>
     <el-divider/>

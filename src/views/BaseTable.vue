@@ -60,9 +60,9 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
-import { initLog, updateLog, deleteLog, pageLogCount, pageLogData } from '@/api'
+import {ref, reactive, onMounted} from 'vue'
+import {ElMessage, ElMessageBox} from 'element-plus'
+import {initLog, updateLog, deleteLog, pageLogCount, pageLogData} from '@/api'
 
 const query = reactive({
   address: '',
@@ -172,6 +172,7 @@ const saveEdit = () => {
 .el-link {
   margin-right: 8px;
 }
+
 .el-link .el-icon--right.el-icon {
   vertical-align: text-bottom;
 }

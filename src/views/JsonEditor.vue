@@ -3,7 +3,7 @@
     <div class="container">
       <MonacoEditor @change-content="changeContent" content='{}'/>
       <el-divider/>
-      <div>{{result}}</div>
+      <div>{{ result }}</div>
     </div>
 
   </div>

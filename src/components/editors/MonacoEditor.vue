@@ -19,10 +19,8 @@ export default {
       default: ""
     },
   },
-  data: () => ({
-  }),
-  methods: {
-  },
+  data: () => ({}),
+  methods: {},
   mounted() {
     self.MonacoEnvironment = {
       getWorker(_, label) {
@@ -77,9 +75,9 @@ export default {
 <style scoped>
 
 .border {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
 }
 
 #editor {
