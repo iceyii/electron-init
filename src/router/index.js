@@ -64,6 +64,15 @@ const routes = [
                 },
                 component: () => import ( /* webpackChunkName: "dashboard" */ '../views/JsonEditor.vue')
             },
+            {
+                path: '/markdownEditor',
+                name: 'markdownEditor',
+                meta: {
+                    title: 'Markdown编辑器',
+                    icon: 'el-icon-edit'
+                },
+                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/MarkdownEditor.vue')
+            },
         ]
     }
 ]

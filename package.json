@@ -17,6 +17,8 @@
     "dexie": "^3.2.2",
     "dexie-mongoify": "^1.3.0",
     "element-plus": "^2.2.0",
+    "highlight.js": "^11.5.1",
+    "mavon-editor": "^3.0.0-beta",
     "monaco-editor": "^0.33.0",
     "vue": "^3.2.33",
     "vue-cropperjs": "^5.0.0",

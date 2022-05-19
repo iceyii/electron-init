@@ -9,7 +9,9 @@ import './assets/css/base.css'
 
 const app = createApp(App)
 // 初始化插件
+// Element-Plus
 installElementPlus(app)
+// 本地数据库
 initDb()
 // 默认登录
 localStorage.setItem("ms_username", "admin");

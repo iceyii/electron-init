@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <MonacoEditor @change-content="changeContent" content='{}'/>
+      <MonacoEditor @change-content="receive" default='{}'/>
       <el-divider/>
       <div>{{ result }}</div>
     </div>
@@ -15,7 +15,7 @@ import {ref} from "vue";
 
 const result = ref('')
 
-const changeContent = (value) => {
+const receive = (value) => {
   result.value = value
 }
 </script>

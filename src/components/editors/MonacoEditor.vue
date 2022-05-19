@@ -14,7 +14,7 @@ import TsWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker"
 
 export default {
   props: {
-    content: {
+    default: {
       type: String,
       default: ""
     },
@@ -63,7 +63,7 @@ export default {
         vertical: "hidden",
       }
     });
-    editor.setValue(this.content);
+    editor.setValue(this.default);
     editor.onDidChangeModelContent(() => {
       //编辑器内容change事件
       this.$emit("change-content", editor.getValue());

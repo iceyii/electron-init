@@ -5,7 +5,7 @@
         ElectronApi调用测试, 调用默认浏览器跳转访问地址：
         <el-button type="primary" @click="jumpToUrl">官网文档</el-button>
       </div>
-      <WangEditor @change-content="receiveContent" default="请输入..."></WangEditor>
+      <WangEditor @change-content="receive" default="请输入..."></WangEditor>
       <el-divider/>
       <div v-html='resultHtml'></div>
       <div v-html='resultText'></div>
@@ -25,7 +25,7 @@ const jumpToUrl = () => {
   window.electron.openURL("https://www.wangeditor.com/");
 };
 
-const receiveContent = (content) => {
+const receive = (content) => {
   resultHtml.value = content;
 }
 
