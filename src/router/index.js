@@ -50,7 +50,7 @@ const routes = [
                 path: '/textEditor',
                 name: 'textEditor',
                 meta: {
-                    title: '文本编辑器',
+                    title: '富文本编辑器',
                     icon: 'el-icon-edit'
                 },
                 component: () => import ( /* webpackChunkName: "dashboard" */ '../views/TextEditor.vue')
