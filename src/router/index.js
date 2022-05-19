@@ -68,10 +68,19 @@ const routes = [
                 path: '/markdownEditor',
                 name: 'markdownEditor',
                 meta: {
-                    title: 'Markdown编辑器',
+                    title: 'Markdown',
                     icon: 'el-icon-edit'
                 },
                 component: () => import ('../views/MarkdownEditor.vue')
+            },
+            {
+                path: '/drag',
+                name: 'drag',
+                meta: {
+                    title: '拖拽列表',
+                    icon: 'el-icon-thumb'
+                },
+                component: () => import ('../views/DragList.vue')
             },
         ]
     }
