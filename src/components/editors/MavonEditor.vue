@@ -1,6 +1,17 @@
 <template>
   <div>
-    <mavonEditor v-model="content" :toolbars="toolbars"/>
+    <mavonEditor
+        v-model="content"
+        :toolbars="toolbars"
+        :subfield="subfield"
+        :defaultOpen="defaultOpen"
+        :toolbarsFlag="true"
+        :editable="true"
+        :navigation="false"
+        placeholder="请输入内容"
+        fontSize="14"
+        value="初始值"
+    />
   </div>
 </template>
 
@@ -10,6 +21,11 @@ import Mavon from "mavon-editor";
 import 'mavon-editor/dist/css/index.css'
 
 const mavonEditor = Mavon.mavonEditor;
+
+// 模式配置 subfield :true： 双栏(编辑预览同屏)， false： 单栏(编辑预览分屏)
+// 模式配置 defaultOpen 在单栏（subfield=false）时默认展示区域. edit： 默认展示编辑区域，preview： 默认展示预览区域
+const subfield = ref(false);
+const defaultOpen = ref('preview');
 
 const toolbars = reactive({
   bold: true, // 粗体
