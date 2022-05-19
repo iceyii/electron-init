@@ -9,7 +9,7 @@
         <div class="drag-box-item">
           <div class="item-title">todo</div>
           <transition-group tag="div" id="todo" class="item-ul">
-            <draggable v-model="todo" group="site" animation="300" @change="changeHandle"   item-key="id" key="id" >
+            <draggable v-model="todo" group="site" animation="300" @change="changeHandle" item-key="id" key="id">
               <template #item="{ element }">
                 <div class="drag-list" :key="element.id">
                   {{ element.content }}
@@ -21,7 +21,7 @@
         <div class="drag-box-item">
           <div class="item-title">doing</div>
           <transition-group tag="div" id="doing" class="item-ul">
-            <draggable v-model="doing" group="site" animation="300" @change="changeHandle"  item-key="id" key="id">
+            <draggable v-model="doing" group="site" animation="300" @change="changeHandle" item-key="id" key="id">
               <template #item="{ element }">
                 <div class="drag-list" :key="element.id">
                   {{ element.content }}
@@ -47,66 +47,16 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import draggable from 'vuedraggable'
+import {ref} from "vue";
 
-export default {
-  name: 'draglist',
-  data() {
-    return {
-      todo: [
-        {
-          id: 1,
-          content: '1. 吃苹果'
-        },
-        {
-          id: 2,
-          content: '2. 吃西瓜'
-        },
-        {
-          id: 3,
-          content: '3. 吃葡萄'
-        }
-      ],
-      doing: [
-        {
-          id: 1,
-          content: '1. 种土豆'
-        },
-        {
-          id: 2,
-          content: '2. 种菠菜'
-        },
-        {
-          id: 3,
-          content: '3. 种西红柿'
-        },
-        {
-          id: 4,
-          content: '4. 种西瓜'
-        }
-      ],
-      done: [
-        {
-          id: 1,
-          content: '1. 爬山'
-        },
-        {
-          id: 2,
-          content: '2. 吃饭'
-        }
-      ]
-    }
-  },
-  components: {
-    draggable
-  },
-  methods: {
-    changeHandle(event) {
-      console.log(event)
-    }
-  }
-}
+const todo = ref([{id: 1, content: '1. 吃苹果'}, {id: 2, content: '2. 吃西瓜'}, {id: 3, content: '3. 吃葡萄'}]);
+const doing = ref([{id: 1, content: '1. 种土豆'}, {id: 2, content: '2. 种菠菜'}, {id: 3, content: '3. 种西红柿'}]);
+const done = ref([{id: 1, content: '1. 爬山'}, {id: 2, content: '2. 吃饭'}]);
+const changeHandle = event => {
+  console.log(event)
+};
 </script>
 
 <style scoped>
