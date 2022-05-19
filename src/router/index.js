@@ -17,7 +17,7 @@ const routes = [
                     title: '首页',
                     icon: 'el-icon-house'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/Dashboard.vue')
+                component: () => import ('../views/Dashboard.vue')
             },
             {
                 path: '/database',
@@ -26,7 +26,7 @@ const routes = [
                     title: '数据库',
                     icon: 'el-icon-coin'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/DataBase.vue')
+                component: () => import ('../views/DataBase.vue')
             },
             {
                 path: '/baseForm',
@@ -35,7 +35,7 @@ const routes = [
                     title: '表单',
                     icon: 'el-icon-document'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/BaseForm.vue')
+                component: () => import ('../views/BaseForm.vue')
             },
             {
                 path: '/baseTable',
@@ -44,7 +44,7 @@ const routes = [
                     title: '表格',
                     icon: 'el-icon-document-copy'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/BaseTable.vue')
+                component: () => import ('../views/BaseTable.vue')
             },
             {
                 path: '/textEditor',
@@ -53,7 +53,7 @@ const routes = [
                     title: '富文本编辑器',
                     icon: 'el-icon-edit'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/TextEditor.vue')
+                component: () => import ('../views/TextEditor.vue')
             },
             {
                 path: '/jsonEditor',
@@ -62,7 +62,7 @@ const routes = [
                     title: 'Json编辑器',
                     icon: 'el-icon-edit'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/JsonEditor.vue')
+                component: () => import ('../views/JsonEditor.vue')
             },
             {
                 path: '/markdownEditor',
@@ -71,7 +71,7 @@ const routes = [
                     title: 'Markdown编辑器',
                     icon: 'el-icon-edit'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ '../views/MarkdownEditor.vue')
+                component: () => import ('../views/MarkdownEditor.vue')
             },
         ]
     }
