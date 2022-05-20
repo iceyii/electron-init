@@ -21,7 +21,6 @@
     "mavon-editor": "^3.0.0-beta",
     "monaco-editor": "^0.33.0",
     "vue": "^3.2.33",
-    "vue-cropperjs": "^5.0.0",
     "vue-router": "^4.0.10",
     "vuedraggable": "^4.1.0",
     "vuex": "^4.0.2"
