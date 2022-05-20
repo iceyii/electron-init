@@ -26,7 +26,7 @@
 
 <script setup>
 import '@wangeditor/editor/dist/css/style.css';
-import {onBeforeUnmount, ref, shallowRef, onMounted, defineProps, toRefs} from 'vue';
+import {onBeforeUnmount, ref, shallowRef, onMounted} from 'vue';
 import {Editor, Toolbar} from '@wangeditor/editor-for-vue';
 
 const props = defineProps({

@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import {defineProps, onMounted, reactive, ref, watch} from "vue";
+import {onMounted, reactive, ref, watch} from "vue";
 import Mavon from "mavon-editor";
 import 'mavon-editor/dist/css/index.css'
 
